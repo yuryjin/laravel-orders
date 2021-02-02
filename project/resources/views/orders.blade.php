@@ -12,6 +12,10 @@
 		<h4>{{ $order->email }}</h4>
 		<p>{{ $order->username }}</p>
 		<p>{{ $order->order }}</p>
+		<div>
+			<a href="" class="btn btn-success">Edit</a>
+			<a href="/deleteorder/{{ $order->id }}" class="btn btn-danger">Delete</a>
+		</div>
 	</div>
 @endforeach
 

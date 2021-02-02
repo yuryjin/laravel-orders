@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 //use App\Models\Contact;
 //use App\Models\Contact;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 use App\Models\Username;
 use Illuminate\Http\Request;
@@ -67,4 +68,33 @@ class MainController extends Controller
         return redirect()->route('createuser');
 
     }
+
+    public function delete($id)
+    {
+        DB::table('usernames')->where('id', $id)->delete();
+        return redirect('/users');
+    }
+
+    public function deleteorder($id)
+    {
+        DB::table('orders')->where('id', $id)->delete();
+        return redirect('/orders');
+    }
+
+    /*
+    public function deleteUser($id)
+    {
+        $user = Username::find($id);
+        $user->delete();
+        return redirect()->route('users');
+    }
+    */
+
+    /*
+    public function destroy($id)
+    {
+        $user = Username::find($id);
+        $user->delete();
+    }
+    */
 }

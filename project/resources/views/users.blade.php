@@ -11,6 +11,11 @@
 	<div class="alert alert-success">
 		<h4>{{ $user->username }}</h4>
 		<p>{{ $user->number }}</p>
+		<div>
+			<a href="" class="btn btn-success">Edit</a>
+			<a href="/delete/{{ $user->id }}" class="btn btn-danger">Delete</a>
+			
+		</div>
 	</div>
 @endforeach
 
